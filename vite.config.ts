@@ -10,5 +10,5 @@ export default defineConfig({
         svgr()
     ],
     publicDir: 'static',
-    base: '/save-the-date-2026/',
+    base: '/home/',
 })
