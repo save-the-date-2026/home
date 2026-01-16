@@ -1,0 +1,6 @@
+export  {default as Left1} from './left-1.svg?react'
+export  {default as Left2} from './left-2.svg?react'
+export  {default as Left3} from './left-3.svg?react'
+export  {default as Right1} from './right-1.svg?react'
+export  {default as Right2} from './right-2.svg?react'
+export  {default as Right3} from './right-3.svg?react'
