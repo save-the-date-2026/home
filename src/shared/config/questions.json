@@ -1,0 +1,239 @@
+[
+    {
+      "id": 1,
+      "title": "",
+      "description": "",
+      "questions": [
+        {
+          "id": 1,
+          "fieldName": "full_name",
+          "label": "Ваше ФИО *",
+          "type": "text",
+          "required": true,
+          "placeholder": "Введите ваше ФИО"
+        },
+        {
+          "id": 2,
+          "fieldName": "attendance",
+          "label": "Придёте ли вы на свадьбу? *",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "value": "yes",
+              "label": "Да"
+            },
+            {
+              "value": "no",
+              "label": "Нет"
+            },
+            {
+              "value": "maybe",
+              "label": "Не уверен(а), уточню позже"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Трансфер",
+      "description": "Чтобы вам было комфортно добраться, мы организуем трансфер. Машины будут ожидать гостей в удобной точке сбора и доставят на площадку, а после мероприятия — обратно. Пожалуйста, отметьте, понадобится ли вам транспорт.",
+      "questions": [
+        {
+          "id": 3,
+          "fieldName": "transport_plan",
+          "label": "Как вы планируете добираться до мероприятия? *",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "value": "both_ways",
+              "label": "Нужен трансфер туда и обратно"
+            },
+            {
+              "value": "to_venue",
+              "label": "Нужен трансфер только туда"
+            },
+            {
+              "value": "from_venue",
+              "label": "Нужен трансфер только обратно"
+            },
+            {
+              "value": "own_car",
+              "label": "Приеду на своей машине"
+            },
+            {
+              "value": "self_transport",
+              "label": "Доберусь самостоятельно и трансфер не нужен"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "fieldName": "passenger_count",
+          "label": "Если нужен трансфер — укажите количество человек",
+          "type": "text",
+          "required": false,
+          "min": 1,
+          "max": 10,
+          "placeholder": "Укажите количество человек",
+          "conditionalLogic": {
+            "dependsOn": "transport_plan",
+            "showIf": ["both_ways", "to_venue", "from_venue"]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Аллергии и особенности питания",
+      "description": "",
+      "questions": [
+        {
+          "id": 5,
+          "fieldName": "diet_restrictions",
+          "label": "Особенности или ограничения питания",
+          "type": "checkbox",
+          "required": false,
+          "options": [
+            {
+              "value": "no_meat",
+              "label": "Не ем мясо"
+            },
+            {
+              "value": "no_fish",
+              "label": "Не ем рыбу"
+            },
+            {
+              "value": "no_sweets",
+              "label": "Не ем сладкое"
+            },
+            {
+              "value": "no_restrictions",
+              "label": "Нет ограничений"
+            },
+            {
+              "value": "other",
+              "label": "Другое"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "fieldName": "diet_other_details",
+          "label": "Уточните, если выбрали 'Другое'",
+          "type": "text",
+          "required": false,
+          "placeholder": "Опишите особенности питания",
+          "conditionalLogic": {
+            "dependsOn": "diet_restrictions",
+            "showIf": ["other"]
+          }
+        },
+        {
+          "id": 7,
+          "fieldName": "has_allergies",
+          "label": "Есть ли у вас аллергии на продукты? *",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "value": "yes",
+              "label": "Да"
+            },
+            {
+              "value": "no",
+              "label": "Нет",
+              "defaultSelected": true
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "fieldName": "allergies_list",
+          "label": "Укажите продукты, вызывающие аллергическую реакцию",
+          "type": "text",
+          "required": false,
+          "placeholder": "Перечислите на что у вас аллергия",
+          "conditionalLogic": {
+            "dependsOn": "has_allergies",
+            "showIf": ["yes"]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Напитки",
+      "description": "",
+      "questions": [
+        {
+          "id": 9,
+          "fieldName": "preferred_drinks",
+          "label": "Какие напитки вы предпочитаете? (можно несколько) *",
+          "type": "checkbox",
+          "required": true,
+          "options": [
+            {
+              "value": "white_wine",
+              "label": "Белое вино"
+            },
+            {
+              "value": "red_wine",
+              "label": "Красное вино"
+            },
+            {
+              "value": "sparkling_wine",
+              "label": "Игристое вино"
+            },
+            {
+              "value": "beer",
+              "label": "Пиво"
+            },
+            {
+              "value": "vodka",
+              "label": "Водка"
+            },
+            {
+              "value": "samogon",
+              "label": "Самогон"
+            },
+            {
+              "value": "no_alcohol",
+              "label": "Не употребляю алкоголь"
+            },
+            {
+              "value": "non_alcoholic",
+              "label": "Безалкогольные напитки",
+              "defaultSelected": true
+            },
+            {
+              "value": "other",
+              "label": "Другое"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "fieldName": "preferred_drinks_other",
+          "label": "Уточните, если выбрали 'Другое'",
+          "type": "text",
+          "required": false,
+          "placeholder": "Какие ещё напитки предпочитаете?",
+          "conditionalLogic": {
+            "dependsOn": "preferred_drinks",
+            "showIf": ["other"]
+          }
+        },
+        {
+          "id": 11,
+          "fieldName": "drinks_to_avoid",
+          "label": "Есть ли напитки, которые вы категорически не пьёте?",
+          "type": "text",
+          "required": false,
+          "placeholder": "Перечислите напитки, которые не употребляете"
+        }
+      ]
+    }
+]

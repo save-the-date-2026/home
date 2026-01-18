@@ -1,0 +1,5 @@
+export {default as Green} from './green.png'
+export {default as LightGreen} from './lgreen.png'
+export {default as Brown} from './brown.png'
+export {default as LightBeige} from './lbeige.png'
+export {default as DarkBeige} from './dbeige.png'
