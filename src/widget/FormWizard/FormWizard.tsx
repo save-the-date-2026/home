@@ -35,10 +35,12 @@ export const FormWizard = ({ blocks, onFinish, isLoading }: FormWizardProps) => 
 
     // автоскролл к началу секции
     useEffect(() => {
-        sectionRef.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        });
+        if(currentBlock !=0){
+            sectionRef.current?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
     }, [currentBlock]);
 
     // вызывается формой при submit текущего блока
