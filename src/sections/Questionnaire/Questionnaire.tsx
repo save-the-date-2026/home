@@ -9,7 +9,7 @@ const formBlocks: FormBlock[] = formConfig as FormBlock[];
 
 export const Questionnaire = () => {
 
-    const [finished, setFinished] = useState(true);
+    const [finished, setFinished] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFinish = async (data: Record<string, any>) => {
