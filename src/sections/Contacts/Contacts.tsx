@@ -4,7 +4,7 @@ import {useState} from "react";
 export const Contacts = () => {
     const [showToast, setShowToast] = useState(false);
     const handleClick = async () => {
-        const phoneNumber = '+79080349610'; // номер в международном формате
+        const phoneNumber = '+79618836485'; // номер в международном формате
 
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
@@ -33,7 +33,7 @@ export const Contacts = () => {
                 <Text>
                     Если хотите сделать творческий подарок или у вас возникнут вопросы, можете обращаться к нашему свадебному организатору.
                 </Text>
-                <Button onClick={handleClick}>+7 (908) 034-96-10 <br/>Людмила</Button>
+                <Button onClick={handleClick}>+7 (961) 883-64-85 <br/>Людмила</Button>
 
                 {showToast && (
                     <Toast
