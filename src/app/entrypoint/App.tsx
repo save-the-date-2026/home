@@ -36,6 +36,7 @@ const Layout = styled.div`
     margin: 0 auto;
     width: 100%;
     padding: 0 16px;
+    z-index: 1;
 
     /* mobile first */
     max-width: 100%;
