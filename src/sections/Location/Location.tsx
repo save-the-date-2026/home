@@ -3,17 +3,23 @@ import {LocationImage} from "@/shared/assets";
 
 export const Location = () => {
     const handleClick = () => {
-        const url = 'https://yandex.ru/maps/-/CLhUrSPl';
+        const webUrl = 'https://yandex.ru/maps/?ll=73.034960,55.269228&z=16';
 
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const isAndroid = /Android/i.test(navigator.userAgent);
 
-        if (isMobile) {
-            // Попытка открыть нативное приложение карт
-            window.location.href = `geo:55.269228,73.034960`;
-        } else {
-            // ПК — открываем в новой вкладке
-            window.open(url, '_blank', 'noopener,noreferrer');
+        if (isIOS) {
+            window.location.href = 'maps://?q=55.269228,73.034960';
+            return;
         }
+
+        if (isAndroid) {
+            window.location.href = 'geo:55.269228,73.034960';
+            return;
+        }
+
+        // Desktop fallback
+        window.open(webUrl, '_blank', 'noopener,noreferrer');
     };
 
     return (
