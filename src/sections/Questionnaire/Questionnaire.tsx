@@ -3,12 +3,13 @@ import type { FormBlock } from '@/widget/FormWizard';
 import formConfig from '@/shared/config/questions.json'
 import {Container, Flex, Title, Text} from "@/shared";
 import {useState} from "react";
+import {EventCountdown} from "./EventCountdown";
 
 const formBlocks: FormBlock[] = formConfig as FormBlock[];
 
 export const Questionnaire = () => {
 
-    const [finished, setFinished] = useState(false);
+    const [finished, setFinished] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFinish = async (data: Record<string, any>) => {
@@ -30,6 +31,7 @@ export const Questionnaire = () => {
                 finished ?
                     <Container marginY={40}>
                         <Flex justify={'center'} gap={20}>
+                            <EventCountdown/>
                             <Text>Данные успешно отправлены</Text>
                             <Title>ЖДЕМ ВАС!</Title>
                         </Flex>
